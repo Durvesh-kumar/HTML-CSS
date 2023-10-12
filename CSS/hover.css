@@ -1,0 +1,18 @@
+.main{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    margin: auto;
+    padding: auto;
+}
+.main:hover{
+    height: 150px;
+    width: 200px;
+    background: blue;
+    color: yellow;
+    font-style: italic;
+}

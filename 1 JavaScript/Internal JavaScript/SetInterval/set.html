@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="main"></h2>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    let my =setInterval(count,1000);
+    let c =0;
+    function count(){
+        document.getElementById("main").innerText =c;
+        c++;
+    }function stop(){
+        clearInterval(my);
+    }
+
+</script>
+</html>

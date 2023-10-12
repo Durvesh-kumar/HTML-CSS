@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">Try</button>
+    <h1></h1>
+</body>
+<script>
+    function test() {
+        try{var num="Durvesh kumar"
+             var x= num.toUpperCase();
+
+             document.getElementsByTagName(`h1`)[0].innerText=x;
+
+        }
+        catch(err){
+            document.getElementsByTagName(`h1`)[0].innerText=err;
+        }
+    }
+</script>
+</html>

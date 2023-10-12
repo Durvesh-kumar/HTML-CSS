@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="remove(this)">Clicl me to hide me</button>
+    <button onclick="this.style.background=`red`">clicl me to hide me</button>
+
+
+    <h1></h1>
+</body>
+<script>
+    let person = {
+        secoundName:" kumar",
+        firstName:"Durvesh",
+        fullName : function () {
+            return this.firstName + this.secoundName;
+        }
+    };
+    document.getElementsByTagName(`h1`)[0].innerText=person.fullName();
+     function remove(elem) {
+        elem.style.display = "none";
+     }
+</script>
+</html>

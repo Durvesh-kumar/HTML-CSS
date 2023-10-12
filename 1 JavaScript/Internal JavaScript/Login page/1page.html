@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 1465px;
+            height: 725px;
+            background: rgb(172, 177, 149);
+            position: absolute;
+        }
+        .col{
+            width: 200px;
+            background: rgb(238, 247, 248);
+            padding: 10px;
+            margin: 20%;
+            position: absolute;
+            margin-left: 45%;
+
+        }
+        .col1{
+            text-align: center;
+            font-size: 25px;
+            height: 70px;
+        }
+        .col2{
+            width: 190px;
+            height: 55px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="return valid()">
+    <div class="main">
+        <div class="col">
+            <div class="col1">
+                School Registration Form
+            </div>
+            <div class="col2">
+                <label for="">Username</label>
+                <input type="text" id="name" size="24">
+            </div>
+            <div class="col2">
+                <label for="">Password</label>
+                <input type="password" id="Password" size="24">
+            </div>
+            <div class="col2">
+                <label for="">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm_Password" size="24" onkeyup="confirm(this)">
+            </div>
+            <div id="error" style="color: red; font-size: 12px;"></div>
+            <div class="">
+                <button type="button" style="width: 195px; height: 30px; font-size: 25px; background: rgb(170, 170, 210);" onclick="submit()">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+<script>
+    let Password = document.getElementById("Password");
+    let flag =  1; // 1 = no error | 0 = error
+    function confirm(elem) {
+        if(elem.value.length > 0){
+            if(elem.value != Password.value){
+                document.getElementById("error").innerText = "confirm password does not match";
+            }else{
+                document.getElementById("error").innerText ="";
+            }
+        }else{
+            document.getElementById("error").innerText ="Please enter Password";
+        }
+        
+    }function valid(params) {
+        if(flag == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+</script>
+</html>

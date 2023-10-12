@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 20%;
+            cursor: pointer;
+            color: red;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+  <div id="main" onmouseenter="modify()">Welcome to my home</div>  
+</body>
+<script>
+function modify(){
+    document.getElementById("main").style.fontSize = "100px";
+}
+</script>
+</html>

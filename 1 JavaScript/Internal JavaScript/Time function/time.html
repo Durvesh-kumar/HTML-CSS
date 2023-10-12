@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="res"></h1>
+    <button onclick="getdate()">GetDate</button>
+    <button onclick="time()">Time</button>
+    <button onclick="year()">Year</button>
+    <button onclick="munites()">Munites</button>
+    <button onclick="secound()">Secound</button>
+    <button onclick="millisecound">Msecound</button>
+    <button onclick="month()">Months</button>
+</body>
+<script type="text/javascript">
+    let date = new Date();
+    function getdate(){
+        document.getElementById(`res`).innerText=date;
+    }
+    function time(){
+    document.getElementById(`res`).innerText=date.getTime;
+}
+function year(){
+    document.getElementById(`res`).innerText=date.getFullYear;
+}
+function munites(){
+    document.getElementById(`res`).innerText=date.getMinutes;
+}
+function month(){
+    document.getElementById(`res`).innerText=date.getMonth;
+}function secound(){
+    document.getElementById(`res`).innerText=date.getSeconds;
+}function millisecound(){
+    document.getElementById(`res`).innerText=date.getMilliseconds;
+}
+
+</script>
+</html>

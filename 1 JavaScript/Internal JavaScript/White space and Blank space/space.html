@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 100%;
+            height: 700px;
+            font-size: 25px;
+            position: relative;
+            background-size: cover;overflow: hidden;
+            background: rgb(214, 115, 115);
+        }
+        .col{
+            width: 310px;
+            padding: 10px;
+            background: transparent;
+            position: absolute;
+            border-radius: 5px;
+            border: 2px solid black;
+            box-shadow: ;
+            top: 20%;
+            left: 40%;
+        }
+        .col1{
+            height: 30px;
+            background: transparent;
+            font-family: sans-serif;
+            font-size: 20px;
+            border-radius: 4px;
+            box-shadow: 5cqmax;
+            color: rgb(102, 49, 200);
+        }
+
+    </style>
+</head>
+<body>
+   <div id="main" onsubmit="tests()">
+    <div class="col">
+        <header>
+            <p style="font-size: 35px; text-align: center;">Student Login Form</p>
+            <p>
+                <label for="name">Username:</label>
+                <input type="text" name="name" id="name" size="25" class="col1" onkeyup="space(this.value)">
+            </p>
+        </header>
+        <main>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" size="25" class="col1" onkeyup="space(this.value)">
+            </p>
+            <p>
+                <label for="confirm_password">Confirm Password</label>
+                <input class="col1" type="password" id="confirm" size="25" onkeyup="check(this)">
+            </p>
+            <p id="res" style="font-size: 15px; color: rgb(237, 9, 9);"></p>
+            <P id="rese" style="font-size: 15px; color: rgb(235, 6, 6);"></P>
+            <P id="data" style="font-size: 15px; color: rgb(235, 6, 6);"></P>
+        </main>
+        <footer>
+            <button type="button" style="width: 300px; height: 40px; font-size: 30px; padding-bottom: 5px;" class="col1">LOGIN</button>
+        </footer>
+    </div>
+   </div>
+</body>
+<script>
+    window.addEventListener("keyup",event =>{
+      let isCaps =  event.getModifierState("CapsLock");
+      if(isCaps){
+        document.getElementById("rese").innerText="WARNING! CapsLock is on"
+      }else{
+        document.getElementById("rese").innerText="";
+      }
+    })
+    let patten = /\s/g;
+    let alert = document.getElementById("data");
+    function space(data) {
+        let isSpace = patten.test(data);
+        if(isSpace){
+            alert.innerText="Space is not valid";
+            flag=0;
+        }else{
+            alert.innerText="";
+            flag=1;
+        }
+    }
+    let x = document.getElementById("password");
+    let flag = 1; // 1=no error | 0=error
+    function check(elem) {
+        if(elem.value.length >0){
+            if(elem.value != x.value){
+                document.getElementById("res").innerText = "Confirm password does not match";
+                flag=0;
+            }
+            else{
+                document.getElementById("res").innerText = "";
+                flag=1;
+            }
+        }else{
+            document.getElementById("res").innerText = "Please enter the password";
+            flag=0;
+        }
+        
+    }
+    function tests() {
+        if(flag==1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+</html>
